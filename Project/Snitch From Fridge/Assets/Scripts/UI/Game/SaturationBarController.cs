@@ -12,7 +12,7 @@ public class SaturationBarController : MonoBehaviour {
     public static float currValue;
     private int TOTAL_TIME = 6;
     private float coef_help = 0;
-    private float delta = 0.00001f;
+    private float delta = 0.00005f;
 
     // Use this for initialization
     void Start () {
