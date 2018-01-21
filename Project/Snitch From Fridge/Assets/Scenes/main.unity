@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saturationBar: {fileID: 615304596}
   score: {fileID: 1276664322}
+  barSpeedMax: 20
 --- !u!114 &169553019
 MonoBehaviour:
   m_ObjectHideFlags: 0
