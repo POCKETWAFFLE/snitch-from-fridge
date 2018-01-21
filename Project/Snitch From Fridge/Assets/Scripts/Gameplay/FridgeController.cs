@@ -29,5 +29,25 @@ public class FridgeController : MonoBehaviour {
             fridgeClose_bkg.SetActive(true);
             fridgeOpen_bkg.SetActive(false);
         }
+        if (GameProgress.IS_GAME_ACTIVE)
+        {
+            if (SwipeManager.IsSwiping(SwipeDirection.Right) && !fridgeOpen.activeSelf)
+            {
+                fridgeClose.SetActive(false);
+                fridgeOpen.SetActive(true);
+                fridgeClose_bkg.SetActive(false);
+                fridgeOpen_bkg.SetActive(true);
+
+                FoodControl.FoodGenerate_kill_me_please();
+                FridgeController.timeOpenFridge = GameProgress.GAME_TIME;
+            }
+            else if (SwipeManager.IsSwiping(SwipeDirection.Left))
+            {
+                fridgeClose.SetActive(true);
+                fridgeOpen.SetActive(false);
+                fridgeClose_bkg.SetActive(true);
+                fridgeOpen_bkg.SetActive(false);
+            }
+        }
     }
 }
