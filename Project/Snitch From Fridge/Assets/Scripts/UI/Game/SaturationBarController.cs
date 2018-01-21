@@ -19,23 +19,23 @@ public class SaturationBarController : MonoBehaviour {
         score.gameObject.SetActive(true);
         currValue = maxValue;
         saturationBar.value = currValue;
-        GameProgress.isGameOn = true;
+        GameProgress.IS_GAME_ACTIVE = true;
         coef_help = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameProgress.isGameOn)
+        if (GameProgress.IS_GAME_ACTIVE)
         {
-            GameProgress.CurrentScore += Time.deltaTime;
-            score.text = "Score " + string.Format("{0:N2}", GameProgress.CurrentScore);
+            GameProgress.CURRENT_SCORE += Time.deltaTime;
+            score.text = "Score " + string.Format("{0:N2}", GameProgress.CURRENT_SCORE);
             if (currValue > 0)
             {
                 BarUpdate();
             }
             else
             {
-                GameProgress.isGameOn = false;
+                GameProgress.IS_GAME_ACTIVE = false;
                 score.gameObject.SetActive(false);
             }
         }

@@ -15,8 +15,8 @@ public class ForFridgeChange : MonoBehaviour
         fridgeOpen.SetActive(!fridgeOpen.activeSelf);
         if (fridgeOpen.activeSelf)
         {
-            Debug.Log("generate food");
             FoodControl.FoodGenerate_kill_me_please();
+            FridgeController.timeOpenFridge = GameProgress.GAME_TIME;
         }
         fridgeClose_bkg.SetActive(!fridgeClose_bkg.activeSelf);
         fridgeOpen_bkg.SetActive(!fridgeOpen_bkg.activeSelf);

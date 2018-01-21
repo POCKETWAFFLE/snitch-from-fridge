@@ -9,6 +9,9 @@ public class FridgeController : MonoBehaviour {
     public GameObject fridgeOpen_bkg;
     public GameObject fridgeClose_bkg;
 
+    public float delta = .30f;
+    public static float timeOpenFridge;
+
     // Use this for initialization
     void Start () {
         fridgeClose.SetActive(true);
@@ -19,17 +22,7 @@ public class FridgeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameProgress.isGameOn)
-        {
-            //if (Input.GetMouseButtonUp(0))
-            {
-               // fridgeClose.SetActive(!fridgeClose.activeSelf);
-               // fridgeOpen.SetActive(!fridgeOpen.activeSelf);
-                //fridgeClose_bkg.SetActive(!fridgeClose_bkg.activeSelf);
-                //fridgeOpen_bkg.SetActive(!fridgeOpen_bkg.activeSelf);
-            }
-        }
-        else
+        if (!GameProgress.IS_GAME_ACTIVE || GameProgress.GAME_TIME - timeOpenFridge > delta)
         {
             fridgeClose.SetActive(true);
             fridgeOpen.SetActive(false);
