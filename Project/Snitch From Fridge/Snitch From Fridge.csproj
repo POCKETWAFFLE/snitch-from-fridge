@@ -230,6 +230,7 @@
     <Compile Include="Assets\Scripts\Gameplay\ForFridgeChange.cs" />
     <Compile Include="Assets\Scripts\Gameplay\FridgeController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\GameProgress.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\RuntimeData.cs" />
     <Compile Include="Assets\Scripts\UI\Game\LoseCaseController.cs" />
     <Compile Include="Assets\Scripts\UI\Game\SaturationBarController.cs" />
   </ItemGroup>
