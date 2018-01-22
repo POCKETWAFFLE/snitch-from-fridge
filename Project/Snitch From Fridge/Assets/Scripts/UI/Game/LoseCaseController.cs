@@ -16,11 +16,13 @@ public class LoseCaseController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!GameProgress.isGameOn)
+		if (!GameProgress.IS_GAME_ACTIVE)
         {
             losePanel.SetActive(true);
-            currentScore.text = "Current score: " + string.Format("{0:N2}", GameProgress.CurrentScore);
-            bestScore.text = "Best score: " + string.Format("{0:N2}", GameProgress.BestScore);
+            currentScore.text = "Current score: " + string.Format("{0:N2}", GameProgress.CURRENT_SCORE);
+            //currentScore.text = "Current score: " + string.Format("{0:N2}", GameProgress.BEST_SCORE); 
+            //cuz for us ur alwayse the best
+            bestScore.text = "Best score: " + string.Format("{0:N2}", GameProgress.BEST_SCORE);
         }
 	}
 

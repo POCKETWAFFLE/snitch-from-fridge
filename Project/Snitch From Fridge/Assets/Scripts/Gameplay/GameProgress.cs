@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class GameProgress : MonoBehaviour
 {
-    public static bool isGameOn;
+    public static bool IS_GAME_ACTIVE;
 
-    public static float BestScore;
-    public static float CurrentScore;
+    public static float BEST_SCORE;
+    public static float CURRENT_SCORE;
+
+    public static float GAME_TIME;
 
     void Start()
     {
-        BestScore = PlayerPrefs.GetFloat("BestScore", 0);
-        CurrentScore = 0;
+        BEST_SCORE = PlayerPrefs.GetFloat("BEST_SCORE", 0);
+        CURRENT_SCORE = 0;
+
+        GAME_TIME = 0;
     }
 
     void Update()
     {
-        if (CurrentScore > BestScore)
+        if (CURRENT_SCORE > BEST_SCORE)
         {
-            BestScore = CurrentScore;
-            PlayerPrefs.SetFloat("BestScore", BestScore);
+            BEST_SCORE = CURRENT_SCORE;
+            PlayerPrefs.SetFloat("BEST_SCORE", BEST_SCORE);
+        }
+
+        GAME_TIME += Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }
